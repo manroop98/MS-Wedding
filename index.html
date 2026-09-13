@@ -708,8 +708,8 @@ html[data-lang="en"] .foot{font-family:var(--body);font-size:9.5px;letter-spacin
 
     <div class="families">
       <p class="inv-line rv" style="margin:0 auto 6px" data-pa="ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੀ ਮਿਹਰ ਅਤੇ" data-en="By the grace of Guru Granth Sahib Ji and">ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੀ ਮਿਹਰ ਅਤੇ</p>
-      <p class="inv-ancestor rv" data-pa="ਸਵਰਗਵਾਸੀ ਸਰਦਾਰ ਅਵਤਾਰ ਸਿੰਘ ਜੀ ਖੇੜਾ" data-en="Late Sardar Avtar Singh Ji Khera">ਸਵਰਗਵਾਸੀ ਸਰਦਾਰ ਅਵਤਾਰ ਸਿੰਘ ਜੀ ਖੇੜਾ</p>
-      <p class="inv-ancestor rv" style="margin-bottom:6px" data-pa="ਸਵਰਗਵਾਸੀ ਸਰਦਾਰਨੀ ਮਹਿੰਦਰ ਕੌਰ ਜੀ ਖੇੜਾ" data-en="Late Sardarni Mohinder Kaur Ji Khera">ਸਵਰਗਵਾਸੀ ਸਰਦਾਰਨੀ ਮਹਿੰਦਰ ਕੌਰ ਜੀ ਖੇੜਾ</p>
+      <p class="inv-ancestor rv" data-pa="ਸਵਰਗਵਾਸੀ ਸਰਦਾਰ ਅਵਤਾਰ ਸਿੰਘ ਜੀ ਖੈੜਾ" data-en="Late Sardar Avtar Singh Ji Khera">ਸਵਰਗਵਾਸੀ ਸਰਦਾਰ ਅਵਤਾਰ ਸਿੰਘ ਜੀ ਖੈੜਾ</p>
+      <p class="inv-ancestor rv" style="margin-bottom:6px" data-pa="ਸਵਰਗਵਾਸੀ ਸਰਦਾਰਨੀ ਮਹਿੰਦਰ ਕੌਰ ਜੀ ਖੈੜਾ" data-en="Late Sardarni Mohinder Kaur Ji Khera">ਸਵਰਗਵਾਸੀ ਸਰਦਾਰਨੀ ਮਹਿੰਦਰ ਕੌਰ ਜੀ ਖੈੜਾ</p>
       <p class="inv-line rv" style="margin:4px auto 6px" data-pa="ਅਤੇ" data-en="and">ਅਤੇ</p>
       <p class="inv-ancestor rv" data-pa="ਸਰਦਾਰ ਸੂਚਾ ਸਿੰਘ ਜੀ ਮੱਟੂ" data-en="Sardar Sucha Singh Ji Mattu">ਸਰਦਾਰ ਸੂਚਾ ਸਿੰਘ ਜੀ ਮੱਟੂ</p>
       <p class="inv-ancestor rv" style="margin-bottom:26px" data-pa="ਸਰਦਾਰਨੀ ਗਿਆਨ ਕੌਰ ਜੀ ਮੱਟੂ ਜੀ ਦੇ ਅਸ਼ੀਰਵਾਦ ਸਦਕਾ" data-en="Sardarni Gian Kaur Ji Mattu">ਸਰਦਾਰਨੀ ਗਿਆਨ ਕੌਰ ਜੀ ਮੱਟੂ ਜੀ ਦੇ ਅਸ਼ੀਰਵਾਦ ਸਦਕਾ</p>
@@ -988,7 +988,7 @@ const track=document.getElementById('track');
 const mBtn=document.getElementById('musicBtn');
 const vidBg=document.getElementById('videoBg');
 
-let dismissed=false, opened=false, triedPortrait=false, safetyTimer=null;
+let dismissed=false, opened=false, triedPortrait=false, safetyTimer=null, clipPreloaded=false;
 
 const CLIPS={
   portrait:{mp4:'pond-9x16.mp4',webm:'pond-9x16.webm',poster:'pond-9x16.jpg'},
@@ -1017,10 +1017,19 @@ function onVideoFail(){
   intro.classList.remove('has-video'); themeColor('#0C3A35');
 }
 function loadClip(c){
+  if(clipPreloaded){ vid.play().catch(onVideoFail); return; }
   vid.innerHTML='<source src="'+c.webm+'" type="video/webm"><source src="'+c.mp4+'" type="video/mp4">';
   vid.poster=c.poster; vidBg.style.backgroundImage="url('"+c.poster+"')";
   vid.load(); vid.play().catch(onVideoFail);
 }
+function preloadClip(){
+  if(clipPreloaded) return; clipPreloaded=true;
+  var c=pickClip();
+  vid.innerHTML='<source src="'+c.webm+'" type="video/webm"><source src="'+c.mp4+'" type="video/mp4">';
+  vid.poster=c.poster; vidBg.style.backgroundImage="url('"+c.poster+"')";
+  vid.load();
+}
+setTimeout(preloadClip,600);
 vid.addEventListener('playing',onPlaying,{once:true});
 vid.addEventListener('error',onVideoFail,{once:true});
 vid.addEventListener('stalled',function(){ setTimeout(function(){ if(!intro.classList.contains('has-video')) onVideoFail(); },3000); },{once:true});
