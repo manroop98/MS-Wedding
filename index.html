@@ -601,7 +601,7 @@ html[data-lang="en"] .foot{font-family:var(--body);font-size:9.5px;letter-spacin
     </svg>
   </button>
 </div>
-<audio id="track" loop preload="none"></audio>
+<audio id="track" preload="none"></audio>
 
 <!-- HERO -->
 <header class="hero">
@@ -925,7 +925,10 @@ function dismissIntro(){
   setTimeout(function(){ if(intro.parentNode) intro.remove(); },1100);
 }
 function onPlaying(){
-  intro.classList.add('has-video'); vid.classList.add('ready'); themeColor('#0C3A35');
+  setTimeout(function(){
+    intro.classList.add('has-video');
+  },200);
+  vid.classList.add('ready'); themeColor('#0C3A35');
   vid.addEventListener('ended',function(){ setTimeout(dismissIntro,1400); },{once:true});
 }
 function onVideoFail(){
