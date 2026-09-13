@@ -36,7 +36,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 body{
   margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--ek);font-weight:300;font-size:clamp(16px,1.25vw,20px);
+  font-family:var(--ek);font-weight:300;font-size:clamp(17px,1.25vw,20px);
   line-height:1.9;overflow-x:clip;-webkit-font-smoothing:antialiased;
 }
 body.is-locked{overflow:hidden}
@@ -185,8 +185,7 @@ html[data-lang="en"] .env-cap .script{font-size:clamp(32px,9vw,44px)}
 #intro.gone{opacity:0;visibility:hidden;pointer-events:none}
 #introVideo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:transparent;opacity:0;transition:opacity .5s ease}
 #introVideo.ready{opacity:1}
-#videoBg{position:absolute;inset:-6%;background-size:cover;background-position:center;filter:blur(28px) brightness(.62);transform:scale(1.1);display:none}
-#intro.has-video #videoBg{display:block}
+#videoBg{position:absolute;inset:-6%;background-size:cover;background-position:center;filter:blur(28px) brightness(.62);transform:scale(1.1)}
 #intro.has-video #pond,#intro.has-video .intro-txt{display:none}
 #pond{position:absolute;inset:0;width:100%;height:100%;display:block}
 #cam{transform-origin:200px 400px;animation:pullback 11s cubic-bezier(.32,.06,.28,1) both}
@@ -303,8 +302,8 @@ html[data-lang="en"] .count span{font-family:var(--body);font-size:9px;letter-sp
 .sec{padding:clamp(90px,17vw,150px) var(--pad)}
 .sec-inner{max-width:var(--maxw);margin:0 auto}
 .sec-head{text-align:center;margin-bottom:clamp(54px,11vw,88px)}
-.sec-head h2{margin:0 0 22px;font-family:var(--gurmukhi);font-weight:600;font-size:clamp(32px,5.5vw,68px);line-height:1.22}
-html[data-lang="en"] .sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(44px,7.5vw,88px);line-height:.98;letter-spacing:-.02em}
+.sec-head h2{margin:0 0 22px;font-family:var(--gurmukhi);font-weight:600;font-size:clamp(36px,7vw,82px);line-height:1.18}
+html[data-lang="en"] .sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(48px,8.5vw,96px);line-height:.96;letter-spacing:-.02em}
 .sec-head p{margin:24px auto 0;max-width:36ch;font-family:var(--gurmukhi);font-style:normal;font-size:clamp(16px,1.6vw,20px);line-height:1.9;color:var(--ink-2)}
 html[data-lang="en"] .sec-head p{font-family:var(--display);font-style:italic;font-size:clamp(17px,4.2vw,21px);line-height:1.5}
 .sec-dark{background:var(--deep);color:var(--paper)}
@@ -352,7 +351,10 @@ html[data-lang="en"] .invocation{
 }
 .lav-item{
   padding:32px 28px;border-left:3px solid var(--gold);
-  background:rgba(78,14,24,.72);text-align:left;border-radius:2px;
+  background:var(--white);border-top:1px solid rgba(199,155,72,.2);
+  border-right:1px solid rgba(199,155,72,.2);border-bottom:1px solid rgba(199,155,72,.2);
+  text-align:left;border-radius:2px;
+  box-shadow:0 2px 12px rgba(42,28,16,.07);
 }
 .lav-no{
   display:block;font-family:var(--ek);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
@@ -360,26 +362,32 @@ html[data-lang="en"] .invocation{
 }
 .lav-pa{
   font-family:var(--gurmukhi);font-size:clamp(16px,2.2vw,20px);line-height:2;font-weight:400;
-  color:var(--paper);margin:0 0 10px;
+  color:var(--ink);margin:0 0 10px;
 }
 .lav-en{
   font-family:var(--display);font-style:italic;font-size:clamp(13px,1.5vw,15px);
-  line-height:1.7;color:rgba(248,240,220,.7);margin:0;
+  line-height:1.7;color:var(--ink-2);margin:0;
 }
 
 /* FAMIGLIE */
 .families{text-align:center;max-width:38ch;margin:0 auto}
 .inv-hosts{
   margin:0;font-family:var(--gurmukhi);font-weight:600;
-  font-size:clamp(20px,4.8vw,27px);line-height:1.4;
+  font-size:clamp(22px,5.5vw,34px);line-height:1.35;
 }
-html[data-lang="en"] .inv-hosts{font-family:var(--display);font-size:clamp(25px,6vw,36px);font-weight:400;line-height:1.14;letter-spacing:-.012em}
+html[data-lang="en"] .inv-hosts{font-family:var(--display);font-size:clamp(28px,6.5vw,42px);font-weight:400;line-height:1.1;letter-spacing:-.012em}
 .inv-line{
   margin:20px auto 0;max-width:34ch;
   font-family:var(--ek);font-size:15px;font-weight:300;line-height:2.05;
   color:rgba(248,240,220,.72);
 }
 html[data-lang="en"] .inv-line{font-family:var(--body);font-size:14.5px;line-height:1.8}
+.inv-ancestor{
+  margin:4px auto 0;max-width:42ch;
+  font-family:var(--gurmukhi);font-size:clamp(16px,3.8vw,20px);font-weight:600;line-height:1.9;
+  color:var(--gold-lt);letter-spacing:.01em;
+}
+html[data-lang="en"] .inv-ancestor{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(17px,3.6vw,22px);line-height:1.6;color:var(--gold-lt)}
 .inv-name{
   margin:30px 0 0;font-family:var(--gurmukhi);font-weight:600;
   font-size:clamp(26px,7vw,38px);line-height:1.25;color:var(--gold-lt);
@@ -422,10 +430,11 @@ html[data-lang="en"] .inv-close{
 .ev-day{display:block;margin-bottom:14px}
 .ev-name{
   margin:0;font-family:var(--gurmukhi);font-weight:600;
-  font-size:clamp(26px,4.5vw,44px);line-height:1.25;
+  font-size:clamp(28px,5.5vw,56px);line-height:1.22;
 }
-html[data-lang="en"] .ev-name{font-family:var(--display);font-weight:400;font-size:clamp(34px,6vw,56px);line-height:1;letter-spacing:-.02em}
-.ev-meta{margin:20px 0 0;padding:0;list-style:none;font-size:clamp(14px,1.2vw,17px);font-weight:300;color:rgba(248,240,220,.8)}
+html[data-lang="en"] .ev-name{font-family:var(--display);font-weight:400;font-size:clamp(36px,7.5vw,68px);line-height:1;letter-spacing:-.02em}
+.ev-meta{margin:20px 0 0;padding:0;list-style:none;font-size:clamp(14px,1.2vw,17px);font-weight:300;color:var(--ink-2)}
+.sec-dark .ev-meta{color:rgba(248,240,220,.8)}
 .ev-meta li{display:flex;gap:10px;align-items:baseline;justify-content:center;margin-bottom:5px}
 .ev-meta i{flex:0 0 auto;width:13px;height:13px;margin-top:4px;background:currentColor;opacity:.4;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}
 .ev-dress{color:var(--red);font-family:var(--ek);font-style:normal;font-size:14px}
@@ -441,6 +450,40 @@ html[data-lang="en"] .btn{font-family:var(--body);font-size:9.5px;letter-spacing
 .btn:hover{background:var(--deep);border-color:var(--deep);color:var(--paper)}
 .btn.filled{background:var(--paper);border-color:var(--paper);color:var(--deep)}
 .btn.filled:hover{background:transparent;color:var(--paper);border-color:var(--paper)}
+
+/* TIMELINE (mobile) */
+.tl-container{position:relative}
+.tl-rail,.tl-pilgrim{display:none}
+@media(max-width:819px){
+  .tl-rail{
+    display:block;position:absolute;
+    left:16px;top:0;bottom:0;width:1px;
+    background:linear-gradient(to bottom,transparent 2%,var(--gold) 9%,var(--gold) 91%,transparent 98%);
+    opacity:.38;pointer-events:none;
+  }
+  .tl-pilgrim{
+    display:block;position:absolute;
+    left:16px;width:36px;height:36px;
+    transform:translate(-50%,-50%);
+    pointer-events:none;z-index:3;top:0;
+  }
+  .tl-pilgrim svg{
+    width:36px;height:36px;
+    filter:drop-shadow(0 0 6px rgba(231,200,126,.7));
+    animation:lotusGlow 3.4s ease-in-out infinite;
+  }
+  @keyframes lotusGlow{
+    0%,100%{filter:drop-shadow(0 0 5px rgba(231,200,126,.5));transform:scale(1) rotate(0deg)}
+    50%{filter:drop-shadow(0 0 12px rgba(231,200,126,.95));transform:scale(1.09) rotate(22.5deg)}
+  }
+  .events{padding-left:44px}
+  .event::before{
+    content:"";position:absolute;left:-27px;top:50%;
+    width:9px;height:9px;border-radius:50%;
+    background:var(--gold);transform:translate(-50%,-50%);
+    box-shadow:0 0 0 4px rgba(199,155,72,.2);opacity:.85;
+  }
+}
 
 /* CHIUSURA */
 .close{position:relative;text-align:center;background:var(--deep-3);isolation:isolate;color:var(--paper)}
@@ -487,6 +530,13 @@ html[data-lang="en"] .foot{font-family:var(--body);font-size:9.5px;letter-spacin
   .ev-acts{justify-content:flex-start}
   .ev-num{left:auto;right:4%;transform:translateY(-50%)}
   .laavan-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:599px){
+  .ev-meta{font-size:15px}
+  .ev-name{font-size:clamp(26px,8vw,38px)}
+  .sec-head h2{font-size:clamp(30px,9.5vw,52px)}
+  .lav-pa{font-size:17px}
+  .inv-ancestor{font-size:clamp(17px,5vw,22px)}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
@@ -657,8 +707,12 @@ html[data-lang="en"] .foot{font-family:var(--body);font-size:9.5px;letter-spacin
     </div>
 
     <div class="families">
-      <p class="inv-line rv" style="margin:0 auto 4px" data-pa="ਸਵ. ਸ. ਅਵਤਾਰ ਸਿੰਘ ਖੇੜਾ ਅਤੇ ਸਵ. ਸਰਦਾਰਨੀ ਮਹਿੰਦਰ ਕੌਰ ਖੇੜਾ ਜੀ" data-en="By the blessings of late Sardar Avtar Singh Khera &amp; late Sardarni Mohinder Kaur Khera">ਸਵ. ਸ. ਅਵਤਾਰ ਸਿੰਘ ਖੇੜਾ ਅਤੇ ਸਵ. ਸਰਦਾਰਨੀ ਮਹਿੰਦਰ ਕੌਰ ਖੇੜਾ ਜੀ</p>
-      <p class="inv-line rv" style="margin:0 auto 26px" data-pa="ਅਤੇ ਸ. ਸੂਚਾ ਸਿੰਘ ਮੱਟੂ ਤੇ ਸਰਦਾਰਨੀ ਗਿਆਨ ਕੌਰ ਮੱਟੂ ਜੀ ਦੇ ਅਸ਼ੀਰਵਾਦ ਸਦਕਾ" data-en="and of Sardar Sucha Singh Mattu &amp; Sardarni Gian Kaur Mattu">ਅਤੇ ਸ. ਸੂਚਾ ਸਿੰਘ ਮੱਟੂ ਤੇ ਸਰਦਾਰਨੀ ਗਿਆਨ ਕੌਰ ਮੱਟੂ ਜੀ ਦੇ ਅਸ਼ੀਰਵਾਦ ਸਦਕਾ</p>
+      <p class="inv-line rv" style="margin:0 auto 6px" data-pa="ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੀ ਮਿਹਰ ਅਤੇ" data-en="By the grace of Guru Granth Sahib Ji and">ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੀ ਮਿਹਰ ਅਤੇ</p>
+      <p class="inv-ancestor rv" data-pa="ਸਵਰਗਵਾਸੀ ਸਰਦਾਰ ਅਵਤਾਰ ਸਿੰਘ ਜੀ ਖੇੜਾ" data-en="Late Sardar Avtar Singh Ji Khera">ਸਵਰਗਵਾਸੀ ਸਰਦਾਰ ਅਵਤਾਰ ਸਿੰਘ ਜੀ ਖੇੜਾ</p>
+      <p class="inv-ancestor rv" style="margin-bottom:6px" data-pa="ਸਵਰਗਵਾਸੀ ਸਰਦਾਰਨੀ ਮਹਿੰਦਰ ਕੌਰ ਜੀ ਖੇੜਾ" data-en="Late Sardarni Mohinder Kaur Ji Khera">ਸਵਰਗਵਾਸੀ ਸਰਦਾਰਨੀ ਮਹਿੰਦਰ ਕੌਰ ਜੀ ਖੇੜਾ</p>
+      <p class="inv-line rv" style="margin:4px auto 6px" data-pa="ਅਤੇ" data-en="and">ਅਤੇ</p>
+      <p class="inv-ancestor rv" data-pa="ਸਰਦਾਰ ਸੂਚਾ ਸਿੰਘ ਜੀ ਮੱਟੂ" data-en="Sardar Sucha Singh Ji Mattu">ਸਰਦਾਰ ਸੂਚਾ ਸਿੰਘ ਜੀ ਮੱਟੂ</p>
+      <p class="inv-ancestor rv" style="margin-bottom:26px" data-pa="ਸਰਦਾਰਨੀ ਗਿਆਨ ਕੌਰ ਜੀ ਮੱਟੂ ਜੀ ਦੇ ਅਸ਼ੀਰਵਾਦ ਸਦਕਾ" data-en="Sardarni Gian Kaur Ji Mattu">ਸਰਦਾਰਨੀ ਗਿਆਨ ਕੌਰ ਜੀ ਮੱਟੂ ਜੀ ਦੇ ਅਸ਼ੀਰਵਾਦ ਸਦਕਾ</p>
 
       <p class="inv-hosts display rv" data-pa="ਸਰਦਾਰ ਕੇਵਲ ਸਿੰਘ ਤੇ ਸਰਦਾਰਨੀ ਬਲਜੀਤ ਕੌਰ" data-en="Sardar Kewal Singh &amp; Sardarni Baljit Kaur">ਸਰਦਾਰ ਕੇਵਲ ਸਿੰਘ ਤੇ ਸਰਦਾਰਨੀ ਬਲਜੀਤ ਕੌਰ</p>
       <p class="inv-line rv" data-pa="ਆਪਣੇ ਦਿਲ ਦੀਆਂ ਤਹਿਆਂ ਵਿੱਚੋਂ ਮੋਹ ਭਿੱਜੇ ਬੋਲਾਂ ਨਾਲ ਤੁਹਾਨੂੰ ਸੱਦਾ ਦਿੰਦੇ ਹਨ ਕਿ ਸਾਡੇ ਸਪੁੱਤਰ" data-en="with hearts full of joy, warmly invite you to the Anand Karaj of their beloved son">ਆਪਣੇ ਦਿਲ ਦੀਆਂ ਤਹਿਆਂ ਵਿੱਚੋਂ ਮੋਹ ਭਿੱਜੇ ਬੋਲਾਂ ਨਾਲ ਤੁਹਾਨੂੰ ਸੱਦਾ ਦਿੰਦੇ ਹਨ ਕਿ ਸਾਡੇ ਸਪੁੱਤਰ</p>
@@ -671,6 +725,47 @@ html[data-lang="en"] .foot{font-family:var(--body);font-size:9.5px;letter-spacin
   </div>
 </section>
 
+<!-- EVENTS -->
+<section class="sec" id="events" style="position:relative">
+  <div class="damask l" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 46 92%27><g fill=%27none%27 stroke=%27%23BE8A3D%27 stroke-width=%271.4%27><path d=%27M23 4c10 6 16 14 16 23 0 9-7 15-14 15-6 0-10-5-10-10 0-6 4-9 9-9 3 0 5 2 5 4%27/><path d=%27M23 4c-5 6-8 13-8 20%27/><path d=%27M23 50c10 6 16 14 16 23 0 9-7 15-14 15-6 0-10-5-10-10 0-6 4-9 9-9 3 0 5 2 5 4%27/><path d=%27M23 50c-5 6-8 13-8 20%27/></g></svg>')"></div>
+  <div class="damask r" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 46 92%27><g fill=%27none%27 stroke=%27%23BE8A3D%27 stroke-width=%271.4%27><path d=%27M23 4c10 6 16 14 16 23 0 9-7 15-14 15-6 0-10-5-10-10 0-6 4-9 9-9 3 0 5 2 5 4%27/><path d=%27M23 4c-5 6-8 13-8 20%27/><path d=%27M23 50c10 6 16 14 16 23 0 9-7 15-14 15-6 0-10-5-10-10 0-6 4-9 9-9 3 0 5 2 5 4%27/><path d=%27M23 50c-5 6-8 13-8 20%27/></g></svg>')"></div>
+  <div class="sec-inner">
+    <div class="sec-head rv">
+      <h2 class="display" data-pa="ਪ੍ਰੋਗਰਾਮ" data-en="Programme">ਪ੍ਰੋਗਰਾਮ</h2>
+      <div class="dbl"><svg viewBox="0 0 24 30" aria-hidden="true"><path d="M12 1c6 3 10 8 10 14 0 6-4 10-9 10-4 0-7-3-7-7 0-4 3-6 6-6 2 0 4 1 4 3"/><path d="M12 1c-3 4-5 8-5 12"/></svg></div>
+    </div>
+    <div class="tl-container">
+      <div class="tl-rail" aria-hidden="true"></div>
+      <div class="tl-pilgrim" id="tlPilgrim" aria-hidden="true">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(20,20)">
+            <path d="M0 0 C-3 -4 -2.5 -13 0 -16 C2.5 -13 3 -4 0 0" fill="#E7C87E" opacity=".9" transform="rotate(0)"/>
+            <path d="M0 0 C-3 -4 -2.5 -13 0 -16 C2.5 -13 3 -4 0 0" fill="#E7C87E" opacity=".9" transform="rotate(45)"/>
+            <path d="M0 0 C-3 -4 -2.5 -13 0 -16 C2.5 -13 3 -4 0 0" fill="#E7C87E" opacity=".9" transform="rotate(90)"/>
+            <path d="M0 0 C-3 -4 -2.5 -13 0 -16 C2.5 -13 3 -4 0 0" fill="#E7C87E" opacity=".9" transform="rotate(135)"/>
+            <path d="M0 0 C-3 -4 -2.5 -13 0 -16 C2.5 -13 3 -4 0 0" fill="#E7C87E" opacity=".9" transform="rotate(180)"/>
+            <path d="M0 0 C-3 -4 -2.5 -13 0 -16 C2.5 -13 3 -4 0 0" fill="#E7C87E" opacity=".9" transform="rotate(225)"/>
+            <path d="M0 0 C-3 -4 -2.5 -13 0 -16 C2.5 -13 3 -4 0 0" fill="#E7C87E" opacity=".9" transform="rotate(270)"/>
+            <path d="M0 0 C-3 -4 -2.5 -13 0 -16 C2.5 -13 3 -4 0 0" fill="#E7C87E" opacity=".9" transform="rotate(315)"/>
+            <path d="M0 0 C-2 -3 -1.5 -9 0 -11 C1.5 -9 2 -3 0 0" fill="#C79B48" opacity=".95" transform="rotate(22.5)"/>
+            <path d="M0 0 C-2 -3 -1.5 -9 0 -11 C1.5 -9 2 -3 0 0" fill="#C79B48" opacity=".95" transform="rotate(67.5)"/>
+            <path d="M0 0 C-2 -3 -1.5 -9 0 -11 C1.5 -9 2 -3 0 0" fill="#C79B48" opacity=".95" transform="rotate(112.5)"/>
+            <path d="M0 0 C-2 -3 -1.5 -9 0 -11 C1.5 -9 2 -3 0 0" fill="#C79B48" opacity=".95" transform="rotate(157.5)"/>
+            <path d="M0 0 C-2 -3 -1.5 -9 0 -11 C1.5 -9 2 -3 0 0" fill="#C79B48" opacity=".95" transform="rotate(202.5)"/>
+            <path d="M0 0 C-2 -3 -1.5 -9 0 -11 C1.5 -9 2 -3 0 0" fill="#C79B48" opacity=".95" transform="rotate(247.5)"/>
+            <path d="M0 0 C-2 -3 -1.5 -9 0 -11 C1.5 -9 2 -3 0 0" fill="#C79B48" opacity=".95" transform="rotate(292.5)"/>
+            <path d="M0 0 C-2 -3 -1.5 -9 0 -11 C1.5 -9 2 -3 0 0" fill="#C79B48" opacity=".95" transform="rotate(337.5)"/>
+            <circle r="5" fill="#B08030"/>
+            <circle r="3.2" fill="#E7C87E" opacity=".9"/>
+            <circle r="1.4" fill="#FFFCF4" opacity=".95"/>
+          </g>
+        </svg>
+      </div>
+      <div class="events" id="eventList"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ANAND KARAJ — ਚਾਰ ਲਾਵਾਂ -->
 <section class="sec" id="laavan">
   <div class="sec-inner">
@@ -679,7 +774,6 @@ html[data-lang="en"] .foot{font-family:var(--body);font-size:9.5px;letter-spacin
       <div class="dbl"><svg viewBox="0 0 24 30" aria-hidden="true"><path d="M12 1c6 3 10 8 10 14 0 6-4 10-9 10-4 0-7-3-7-7 0-4 3-6 6-6 2 0 4 1 4 3"/><path d="M12 1c-3 4-5 8-5 12"/></svg></div>
       <p data-pa="ਸਿੱਖ ਵਿਆਹ ਦੀ ਪਵਿੱਤਰ ਰਸਮ — ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੀ ਹਜ਼ੂਰੀ ਵਿੱਚ ਚਾਰ ਲਾਵਾਂ" data-en="The sacred Sikh wedding ceremony — four Laavan recited in the presence of Guru Granth Sahib Ji">ਸਿੱਖ ਵਿਆਹ ਦੀ ਪਵਿੱਤਰ ਰਸਮ — ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੀ ਹਜ਼ੂਰੀ ਵਿੱਚ ਚਾਰ ਲਾਵਾਂ</p>
     </div>
-
     <div class="laavan-grid rv">
       <div class="lav-item">
         <span class="lav-no">ਪਹਿਲੀ ਲਾਵ</span>
@@ -702,20 +796,7 @@ html[data-lang="en"] .foot{font-family:var(--body);font-size:9.5px;letter-spacin
         <p class="lav-en">In the fourth round, the mind becomes peaceful and tranquil, and the Lord God is found.</p>
       </div>
     </div>
-    <p style="text-align:center;margin-top:18px;font-family:var(--body);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)">Guru Ram Das Ji — Suhi Mahalla 4, Anand Karaj</p>
-  </div>
-</section>
-
-<!-- EVENTS -->
-<section class="sec sec-dark" id="events" style="position:relative">
-  <div class="damask l" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 46 92%27><g fill=%27none%27 stroke=%27%23BE8A3D%27 stroke-width=%271.4%27><path d=%27M23 4c10 6 16 14 16 23 0 9-7 15-14 15-6 0-10-5-10-10 0-6 4-9 9-9 3 0 5 2 5 4%27/><path d=%27M23 4c-5 6-8 13-8 20%27/><path d=%27M23 50c10 6 16 14 16 23 0 9-7 15-14 15-6 0-10-5-10-10 0-6 4-9 9-9 3 0 5 2 5 4%27/><path d=%27M23 50c-5 6-8 13-8 20%27/></g></svg>')"></div>
-  <div class="damask r" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 46 92%27><g fill=%27none%27 stroke=%27%23BE8A3D%27 stroke-width=%271.4%27><path d=%27M23 4c10 6 16 14 16 23 0 9-7 15-14 15-6 0-10-5-10-10 0-6 4-9 9-9 3 0 5 2 5 4%27/><path d=%27M23 4c-5 6-8 13-8 20%27/><path d=%27M23 50c10 6 16 14 16 23 0 9-7 15-14 15-6 0-10-5-10-10 0-6 4-9 9-9 3 0 5 2 5 4%27/><path d=%27M23 50c-5 6-8 13-8 20%27/></g></svg>')"></div>
-  <div class="sec-inner">
-    <div class="sec-head rv">
-      <h2 class="display" data-pa="ਪ੍ਰੋਗਰਾਮ" data-en="Programme">ਪ੍ਰੋਗਰਾਮ</h2>
-      <div class="dbl"><svg viewBox="0 0 24 30" aria-hidden="true"><path d="M12 1c6 3 10 8 10 14 0 6-4 10-9 10-4 0-7-3-7-7 0-4 3-6 6-6 2 0 4 1 4 3"/><path d="M12 1c-3 4-5 8-5 12"/></svg></div>
-    </div>
-    <div class="events" id="eventList"></div>
+    <p style="text-align:center;margin-top:18px;font-family:var(--body);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)">ਗੁਰੂ ਰਾਮ ਦਾਸ ਜੀ · Suhi Mahalla 4 · Anand Karaj</p>
   </div>
 </section>
 
@@ -964,14 +1045,16 @@ document.getElementById('skip').addEventListener('click',dismissIntro);
 
 /* MUSICA */
 const MUSIC_FILES=['music/1.mp3','music/2.mp3','music/3.mp3','music/4.mp3','music/5.mp3','music/6.mp3','music/7.mp3'];
-let mIdx=0;
+let mIdx=Math.floor(Math.random()*MUSIC_FILES.length);
 function musicLabel(playing){
   const lpa=playing?'ਸੰਗੀਤ ਬੰਦ ਕਰੋ':'ਸੰਗੀਤ ਚਲਾਓ';
   const len=playing?'Stop music':'Play music';
   mBtn.setAttribute('aria-label',LANG==='pa'?lpa:len);
 }
 track.addEventListener('ended',function(){
-  mIdx=(mIdx+1)%MUSIC_FILES.length;
+  var next=mIdx;
+  while(next===mIdx && MUSIC_FILES.length>1) next=Math.floor(Math.random()*MUSIC_FILES.length);
+  mIdx=next;
   track.src=MUSIC_FILES[mIdx]; track.play();
 });
 mBtn.addEventListener('click',function(){
@@ -1015,6 +1098,27 @@ function observeReveals(){
   },{threshold:.14});
   els.forEach(function(el){ obs.observe(el); });
 }
+
+/* TIMELINE LOTUS */
+(function(){
+  var mq=window.matchMedia('(min-width:820px)');
+  var pilgrim=document.getElementById('tlPilgrim');
+  var container=document.querySelector('.tl-container');
+  if(!pilgrim||!container) return;
+  function updateTl(){
+    if(mq.matches){pilgrim.style.display='none';return;}
+    pilgrim.style.display='';
+    var rect=container.getBoundingClientRect();
+    var h=container.offsetHeight;
+    var vh=window.innerHeight;
+    var raw=(vh-rect.top)/(vh+h);
+    var p=Math.max(0.012,Math.min(0.988,raw));
+    pilgrim.style.top=(h*p)+'px';
+  }
+  window.addEventListener('scroll',updateTl,{passive:true});
+  window.addEventListener('resize',updateTl,{passive:true});
+  updateTl();
+})();
 
 /* INIT */
 applyLang('pa');
