@@ -36,7 +36,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
 body{
   margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--ek);font-weight:300;font-size:16px;
+  font-family:var(--ek);font-weight:300;font-size:clamp(16px,1.25vw,20px);
   line-height:1.9;overflow-x:clip;-webkit-font-smoothing:antialiased;
 }
 body.is-locked{overflow:hidden}
@@ -303,9 +303,9 @@ html[data-lang="en"] .count span{font-family:var(--body);font-size:9px;letter-sp
 .sec{padding:clamp(90px,17vw,150px) var(--pad)}
 .sec-inner{max-width:var(--maxw);margin:0 auto}
 .sec-head{text-align:center;margin-bottom:clamp(54px,11vw,88px)}
-.sec-head h2{margin:0 0 22px;font-family:var(--gurmukhi);font-weight:600;font-size:clamp(29px,7.4vw,52px);line-height:1.22}
-html[data-lang="en"] .sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(40px,11vw,72px);line-height:.98;letter-spacing:-.02em}
-.sec-head p{margin:24px auto 0;max-width:36ch;font-family:var(--gurmukhi);font-style:normal;font-size:clamp(15px,3.8vw,17px);line-height:1.9;color:var(--ink-2)}
+.sec-head h2{margin:0 0 22px;font-family:var(--gurmukhi);font-weight:600;font-size:clamp(32px,5.5vw,68px);line-height:1.22}
+html[data-lang="en"] .sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(44px,7.5vw,88px);line-height:.98;letter-spacing:-.02em}
+.sec-head p{margin:24px auto 0;max-width:36ch;font-family:var(--gurmukhi);font-style:normal;font-size:clamp(16px,1.6vw,20px);line-height:1.9;color:var(--ink-2)}
 html[data-lang="en"] .sec-head p{font-family:var(--display);font-style:italic;font-size:clamp(17px,4.2vw,21px);line-height:1.5}
 .sec-dark{background:var(--deep);color:var(--paper)}
 .sec-dark .sec-head h2,.sec-dark .display{color:var(--paper)}
@@ -346,24 +346,25 @@ html[data-lang="en"] .invocation{
 
 /* LAAVAN */
 .laavan-grid{
-  display:grid;gap:32px;
-  margin:48px auto 0;max-width:600px;
+  display:grid;gap:24px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  margin:48px auto 0;max-width:760px;
 }
 .lav-item{
-  padding:28px 24px;border-left:2px solid rgba(199,155,72,.4);
-  background:rgba(199,155,72,.04);text-align:left;
+  padding:32px 28px;border-left:3px solid var(--gold);
+  background:rgba(78,14,24,.72);text-align:left;border-radius:2px;
 }
 .lav-no{
-  display:block;font-family:var(--body);font-size:9px;letter-spacing:.25em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:10px;
+  display:block;font-family:var(--ek);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;
 }
 .lav-pa{
-  font-family:var(--ek);font-size:clamp(15px,3.8vw,17px);line-height:2;
-  color:var(--gold-lt);margin:0 0 8px;
+  font-family:var(--gurmukhi);font-size:clamp(16px,2.2vw,20px);line-height:2;font-weight:400;
+  color:var(--paper);margin:0 0 10px;
 }
 .lav-en{
-  font-family:var(--display);font-style:italic;font-size:clamp(13px,3.2vw,15px);
-  line-height:1.6;color:rgba(248,240,220,.6);margin:0;
+  font-family:var(--display);font-style:italic;font-size:clamp(13px,1.5vw,15px);
+  line-height:1.7;color:rgba(248,240,220,.7);margin:0;
 }
 
 /* FAMIGLIE */
@@ -421,10 +422,10 @@ html[data-lang="en"] .inv-close{
 .ev-day{display:block;margin-bottom:14px}
 .ev-name{
   margin:0;font-family:var(--gurmukhi);font-weight:600;
-  font-size:clamp(23px,6vw,33px);line-height:1.25;
+  font-size:clamp(26px,4.5vw,44px);line-height:1.25;
 }
-html[data-lang="en"] .ev-name{font-family:var(--display);font-weight:400;font-size:clamp(31px,8vw,48px);line-height:1;letter-spacing:-.02em}
-.ev-meta{margin:20px 0 0;padding:0;list-style:none;font-size:14.5px;font-weight:300;color:var(--ink-2)}
+html[data-lang="en"] .ev-name{font-family:var(--display);font-weight:400;font-size:clamp(34px,6vw,56px);line-height:1;letter-spacing:-.02em}
+.ev-meta{margin:20px 0 0;padding:0;list-style:none;font-size:clamp(14px,1.2vw,17px);font-weight:300;color:rgba(248,240,220,.8)}
 .ev-meta li{display:flex;gap:10px;align-items:baseline;justify-content:center;margin-bottom:5px}
 .ev-meta i{flex:0 0 auto;width:13px;height:13px;margin-top:4px;background:currentColor;opacity:.4;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}
 .ev-dress{color:var(--red);font-family:var(--ek);font-style:normal;font-size:14px}
@@ -507,11 +508,11 @@ html[data-lang="en"] .foot{font-family:var(--body);font-size:9.5px;letter-spacin
         <div class="env-front"></div>
         <div class="env-flap"></div>
         <div class="env-seal">&#2676;</div>
-        <span class="env-hint" data-pa="ਖੋਲ੍ਹਣ ਲਈ ਛੂਹੋ" data-en="tap to open">ਖੋਲ੍ਹਣ ਲਈ ਛੂਹੋ</span>
+        <span class="env-hint" data-pa="Tap to open" data-en="Tap to open">Tap to open</span>
       </div>
     </button>
     <div class="env-cap">
-      <span class="script" data-pa="ਖੋਲ੍ਹਣ ਲਈ ਛੂਹੋ" data-en="Tap to open">ਖੋਲ੍ਹਣ ਲਈ ਛੂਹੋ</span>
+      <span class="script" data-pa="Tap to open" data-en="Tap to open">Tap to open</span>
       <small>30 · 01 · 2027</small>
     </div>
   </div>
@@ -521,7 +522,7 @@ html[data-lang="en"] .foot{font-family:var(--body);font-size:9.5px;letter-spacin
 <div id="intro">
   <button id="skip" data-pa="ਛੱਡੋ" data-en="SKIP">ਛੱਡੋ</button>
   <div id="videoBg" style="background-image:url('pond-poster.jpg')"></div>
-  <video id="introVideo" muted playsinline preload="none" aria-hidden="true"></video>
+  <video id="introVideo" muted playsinline preload="auto" aria-hidden="true"></video>
   <svg id="pond" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <defs>
       <radialGradient id="water" cx="50%" cy="42%" r="78%">
@@ -944,6 +945,11 @@ vid.addEventListener('stalled',function(){ setTimeout(function(){ if(!intro.clas
 document.getElementById('envBtn').addEventListener('click',function(){
   if(opened) return; opened=true;
   env.classList.add('open');
+  /* avvia musica al click sulla busta */
+  if(track.paused && !mBtn.classList.contains('nomusic')){
+    if(!track.src){ track.src=MUSIC_FILES[mIdx]; }
+    track.play().then(function(){ mBtn.classList.add('playing'); mBtn.setAttribute('aria-pressed','true'); musicLabel(true); }).catch(function(){});
+  }
   setTimeout(function(){
     env.classList.add('gone');
     loadClip(pickClip());
@@ -954,7 +960,7 @@ document.getElementById('envBtn').addEventListener('click',function(){
 document.getElementById('skip').addEventListener('click',dismissIntro);
 
 /* MUSICA */
-const MUSIC_FILES=['music/1.mp3','music/2.mp3','music/3.mp3','music/4.mp3','music/5.mp3','music/6.mp3','music/7.mp3','music/8.mp3'];
+const MUSIC_FILES=['music/1.mp3','music/2.mp3','music/3.mp3','music/4.mp3','music/5.mp3','music/6.mp3','music/7.mp3'];
 let mIdx=0;
 function musicLabel(playing){
   const lpa=playing?'ਸੰਗੀਤ ਬੰਦ ਕਰੋ':'ਸੰਗੀਤ ਚਲਾਓ';
