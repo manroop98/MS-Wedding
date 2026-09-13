@@ -185,8 +185,7 @@ html[data-lang="en"] .env-cap .script{font-size:clamp(32px,9vw,44px)}
 #intro.gone{opacity:0;visibility:hidden;pointer-events:none}
 #introVideo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:transparent;opacity:0;transition:opacity .5s ease}
 #introVideo.ready{opacity:1}
-#videoBg{position:absolute;inset:-6%;background-size:cover;background-position:center;filter:blur(28px) brightness(.62);transform:scale(1.1);transition:transform .12s linear;will-change:transform}
-#pond{transition:transform .12s linear;will-change:transform}
+#videoBg{position:absolute;inset:-6%;background-size:cover;background-position:center;filter:blur(28px) brightness(.62);transform:scale(1.1)}
 #intro.has-video #pond,#intro.has-video .intro-txt{display:none}
 #pond{position:absolute;inset:0;width:100%;height:100%;display:block}
 #cam{transform-origin:200px 400px;animation:pullback 11s cubic-bezier(.32,.06,.28,1) both}
@@ -571,7 +570,7 @@ html[data-lang="en"] .foot{font-family:var(--body);font-size:9.5px;letter-spacin
 
 <!-- INTRO -->
 <div id="intro">
-  <button id="skip" data-pa="ਛੱਡੋ" data-en="SKIP">ਛੱਡੋ</button>
+  <button id="skip" data-pa="ਸਕਿਪ ਕਰੋ" data-en="SKIP KARO">ਸਕਿਪ ਕਰੋ</button>
   <div id="videoBg" style="background-image:url('pond-poster.jpg')"></div>
   <video id="introVideo" muted playsinline preload="auto" aria-hidden="true"></video>
   <svg id="pond" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -671,7 +670,7 @@ html[data-lang="en"] .foot{font-family:var(--body);font-size:9.5px;letter-spacin
       <span data-pa="ਸੁਖਪ੍ਰੀਤ ਕੌਰ" data-en="Sukhpreet Kaur">ਸੁਖਪ੍ਰੀਤ ਕੌਰ</span>
     </h1>
 
-    <div class="datepill" data-pa="ਸਨਿੱਚਰਵਾਰ, 30 ਜਨਵਰੀ 2027" data-en="SATURDAY, 30 JANUARY 2027">ਸਨਿੱਚਰਵਾਰ, 30 ਜਨਵਰੀ 2027</div>
+    <div class="datepill" data-pa="ਸ਼ਨੀਵਾਰ, 30 ਜਨਵਰੀ 2027" data-en="SATURDAY, 30 JANUARY 2027">ਸ਼ਨੀਵਾਰ, 30 ਜਨਵਰੀ 2027</div>
     <p class="venue label" data-pa="ਕੇਸਰਪੁਰ · ਕਪੂਰਥਲਾ · ਪੰਜਾਬ" data-en="KESARPUR · KAPURTHALA · PUNJAB">ਕੇਸਰਪੁਰ · ਕਪੂਰਥਲਾ · ਪੰਜਾਬ</p>
 
     <div class="count-wrap">
@@ -710,10 +709,12 @@ html[data-lang="en"] .foot{font-family:var(--body);font-size:9.5px;letter-spacin
     <div class="families">
       <p class="inv-line rv" style="margin:0 auto 6px" data-pa="ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੀ ਮਿਹਰ ਅਤੇ" data-en="By the grace of Guru Granth Sahib Ji and">ਸ਼੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੀ ਮਿਹਰ ਅਤੇ</p>
       <p class="inv-ancestor rv" data-pa="ਸਵਰਗਵਾਸੀ ਸਰਦਾਰ ਅਵਤਾਰ ਸਿੰਘ ਜੀ ਖੈੜਾ" data-en="Late Sardar Avtar Singh Ji Khera">ਸਵਰਗਵਾਸੀ ਸਰਦਾਰ ਅਵਤਾਰ ਸਿੰਘ ਜੀ ਖੈੜਾ</p>
-      <p class="inv-ancestor rv" style="margin-bottom:6px" data-pa="ਸਵਰਗਵਾਸੀ ਸਰਦਾਰਨੀ ਮਹਿੰਦਰ ਕੌਰ ਜੀ ਖੈੜਾ" data-en="Late Sardarni Mohinder Kaur Ji Khera">ਸਵਰਗਵਾਸੀ ਸਰਦਾਰਨੀ ਮਹਿੰਦਰ ਕੌਰ ਜੀ ਖੈੜਾ</p>
+      <p class="inv-ancestor rv" data-pa="ਸਵਰਗਵਾਸੀ ਸਰਦਾਰਨੀ ਮਹਿੰਦਰ ਕੌਰ ਜੀ ਖੈੜਾ" data-en="Late Sardarni Mohinder Kaur Ji Khera">ਸਵਰਗਵਾਸੀ ਸਰਦਾਰਨੀ ਮਹਿੰਦਰ ਕੌਰ ਜੀ ਖੈੜਾ</p>
+      <p class="inv-line rv" style="margin:2px auto 8px;font-size:clamp(13px,3vw,15px);opacity:.7;letter-spacing:.06em" data-pa="ਦਾਦਕਾ ਪਰਿਵਾਰ" data-en="DADKA PARIVAR">ਦਾਦਕਾ ਪਰਿਵਾਰ</p>
       <p class="inv-line rv" style="margin:4px auto 6px" data-pa="ਅਤੇ" data-en="and">ਅਤੇ</p>
       <p class="inv-ancestor rv" data-pa="ਸਰਦਾਰ ਸੂਚਾ ਸਿੰਘ ਜੀ ਮੱਟੂ" data-en="Sardar Sucha Singh Ji Mattu">ਸਰਦਾਰ ਸੂਚਾ ਸਿੰਘ ਜੀ ਮੱਟੂ</p>
-      <p class="inv-ancestor rv" style="margin-bottom:26px" data-pa="ਸਰਦਾਰਨੀ ਗਿਆਨ ਕੌਰ ਜੀ ਮੱਟੂ ਜੀ ਦੇ ਅਸ਼ੀਰਵਾਦ ਸਦਕਾ" data-en="Sardarni Gian Kaur Ji Mattu">ਸਰਦਾਰਨੀ ਗਿਆਨ ਕੌਰ ਜੀ ਮੱਟੂ ਜੀ ਦੇ ਅਸ਼ੀਰਵਾਦ ਸਦਕਾ</p>
+      <p class="inv-ancestor rv" data-pa="ਸਰਦਾਰਨੀ ਗਿਆਨ ਕੌਰ ਜੀ ਮੱਟੂ ਜੀ ਦੇ ਅਸ਼ੀਰਵਾਦ ਸਦਕਾ" data-en="Sardarni Gian Kaur Ji Mattu">ਸਰਦਾਰਨੀ ਗਿਆਨ ਕੌਰ ਜੀ ਮੱਟੂ ਜੀ ਦੇ ਅਸ਼ੀਰਵਾਦ ਸਦਕਾ</p>
+      <p class="inv-line rv" style="margin:2px auto 26px;font-size:clamp(13px,3vw,15px);opacity:.7;letter-spacing:.06em" data-pa="ਨਾਨਕਾ ਪਰਿਵਾਰ" data-en="NANKA PARIVAR">ਨਾਨਕਾ ਪਰਿਵਾਰ</p>
 
       <p class="inv-hosts display rv" data-pa="ਸਰਦਾਰ ਕੇਵਲ ਸਿੰਘ ਤੇ ਸਰਦਾਰਨੀ ਬਲਜੀਤ ਕੌਰ" data-en="Sardar Kewal Singh &amp; Sardarni Baljit Kaur">ਸਰਦਾਰ ਕੇਵਲ ਸਿੰਘ ਤੇ ਸਰਦਾਰਨੀ ਬਲਜੀਤ ਕੌਰ</p>
       <p class="inv-line rv" data-pa="ਆਪਣੇ ਦਿਲ ਦੀਆਂ ਤਹਿਆਂ ਵਿੱਚੋਂ ਮੋਹ ਭਿੱਜੇ ਬੋਲਾਂ ਨਾਲ ਤੁਹਾਨੂੰ ਸੱਦਾ ਦਿੰਦੇ ਹਨ ਕਿ ਸਾਡੇ ਸਪੁੱਤਰ" data-en="with hearts full of joy, warmly invite you to the Anand Karaj of their beloved son">ਆਪਣੇ ਦਿਲ ਦੀਆਂ ਤਹਿਆਂ ਵਿੱਚੋਂ ਮੋਹ ਭਿੱਜੇ ਬੋਲਾਂ ਨਾਲ ਤੁਹਾਨੂੰ ਸੱਦਾ ਦਿੰਦੇ ਹਨ ਕਿ ਸਾਡੇ ਸਪੁੱਤਰ</p>
@@ -1035,42 +1036,10 @@ vid.addEventListener('playing',onPlaying,{once:true});
 vid.addEventListener('error',onVideoFail,{once:true});
 vid.addEventListener('stalled',function(){ setTimeout(function(){ if(!intro.classList.contains('has-video')) onVideoFail(); },3000); },{once:true});
 
-/* GYROSCOPE parallax */
-(function(){
-  var pond=document.getElementById('pond');
-  var baseX=0, baseY=0, calibrated=false;
-  var MAX=18;
-  function applyTilt(beta,gamma){
-    if(!calibrated){ baseX=gamma; baseY=beta; calibrated=true; }
-    var dx=Math.max(-MAX,Math.min(MAX,(gamma-baseX)*0.55));
-    var dy=Math.max(-MAX,Math.min(MAX,(beta-baseY)*0.35));
-    var tf='scale(1.1) translate('+dx+'px,'+dy+'px)';
-    vidBg.style.transform=tf;
-    if(pond) pond.style.transform='translate('+(-dx*.4)+'px,'+(- dy*.4)+'px)';
-  }
-  function startGyro(){
-    window.addEventListener('deviceorientation',function(e){
-      if(e.gamma===null) return;
-      applyTilt(e.beta,e.gamma);
-    },{passive:true});
-  }
-  if(typeof DeviceOrientationEvent!=='undefined' && typeof DeviceOrientationEvent.requestPermission==='function'){
-    /* iOS 13+ — chiede permesso al primo tap (busta) */
-    window._gyroReady=function(){
-      DeviceOrientationEvent.requestPermission().then(function(r){
-        if(r==='granted') startGyro();
-      }).catch(function(){});
-    };
-  } else if(window.DeviceOrientationEvent){
-    startGyro();
-  }
-})();
-
 /* BUSTA click */
 document.getElementById('envBtn').addEventListener('click',function(){
   if(opened) return; opened=true;
   env.classList.add('open');
-  if(window._gyroReady) window._gyroReady();
   /* avvia musica al click sulla busta */
   if(track.paused && !mBtn.classList.contains('nomusic')){
     if(!track.src){ track.src=MUSIC_FILES[mIdx]; }
