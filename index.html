@@ -885,7 +885,7 @@ const EVENTS = [
     name:{pa:"ਸ੍ਰੀ ਅਖੰਡ ਪਾਠ ਸਾਹਿਬ ਦਾ ਭੋਗ",en:"Shri Akhand Path Sahib da Bhog"},
     time:{pa:"ਭੋਗ + ਸ਼ਗਨ ਸਵੇਰੇ 10:30",en:"Bhog + Shagun 10:30 AM"},
     place:{pa:"ਸਰਦਾਰ ਸੂਚਾ ਸਿੰਘ ਜੀ ਮੱਟੂ ਦਾ ਨਿਵਾਸ, ਕੇਸਰਪੁਰ",en:"Residence of Sardar Sucha Singh Ji Mattu, Kesarpur"},
-    start:"2027-01-27T12:30:00+05:30",end:"2027-01-27T15:00:00+05:30",
+    start:"2027-01-27T10:30:00+05:30",end:"2027-01-27T13:30:00+05:30",
     map:"Kesarpur, Kapurthala, Punjab",icon:"icons/ev-bhog.webp"
   },
   {
@@ -901,18 +901,20 @@ const EVENTS = [
     name:{pa:"ਅਨੰਦ ਕਾਰਜ",en:"Anand Karaj"},
     dress:"Kindly avoid wearing red — the colour is reserved for the bride",
     time:{pa:"ਸਵੇਰੇ 9:30",en:"9:30 AM"},
-    place:{pa:"ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ — ਸਥਾਨ ਜਲਦ ਦੱਸਿਆ ਜਾਵੇਗਾ",en:"Gurdwara Sahib — to be confirmed"},
+    place:{pa:"ਗੁਰੂਦਵਾਰਾ ਰਾਮ ਸਾਰ ਸਾਹਿਬ, ਪੱਡੀ ਸੂਰਾ ਸਿੰਘ",en:"Gurudwara Ram Sar Sahib, Paddi Sura Singh"},
     start:"2027-01-30T09:30:00+05:30",end:"2027-01-30T11:30:00+05:30",
-    map:"Kapurthala, Punjab",icon:"icons/ev-anand.webp"
+    map:"Gurudwara Ram Sar Sahib, Paddi Sura Singh, Punjab 144529",
+    mapUrl:"https://maps.app.goo.gl/vqKWVJZ8Z2iVUz5N6",icon:"icons/ev-anand.webp"
   },
   {
     day:{pa:"ਸ਼ਨੀਵਾਰ 30 ਜਨਵਰੀ",en:"SATURDAY 30 JANUARY"},
     name:{pa:"ਰਿਸੈਪਸ਼ਨ",en:"Reception"},
     dress:"Kindly avoid wearing red — the colour is reserved for the bride",
     time:{pa:"ਦੁਪਹਿਰ 12:30",en:"12:30 PM"},
-    place:{pa:"ਥਾਂ ਦਾ ਐਲਾਨ ਹੋਣਾ ਬਾਕੀ",en:"Venue to be announced"},
+    place:{pa:"ਕਿੰਗ ਰਿਜ਼ਾਰਟ, ਹੁਸ਼ਿਆਰਪੁਰ–ਗੜ੍ਹਸ਼ੰਕਰ ਰੋਡ",en:"King Resort, Hoshiarpur–Garhshankar Road"},
     start:"2027-01-30T12:30:00+05:30",end:"2027-01-30T18:00:00+05:30",
-    map:"Kapurthala, Punjab",icon:"icons/ev-reception.webp"
+    map:"King Resort, Hoshiarpur - Garhshankar Rd, Punjab 144528",
+    mapUrl:"https://maps.app.goo.gl/WaArMvhrZScW4kf7A",icon:"icons/ev-reception.webp"
   }
 ];
 
@@ -967,7 +969,7 @@ function buildEvents(){
         ${e.dress?`<p class="ev-dress">${esc(e.dress)}</p>`:''}
         <div class="ev-acts">
           <a class="btn" target="_blank" rel="noopener"
-             href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(e.map)}">${T.location[LANG]}</a>
+             href="${e.mapUrl || ('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(e.map))}">${T.location[LANG]}</a>
           <button class="btn" data-ics="${i}">${T.cal[LANG]}</button>
         </div>
       </div>
@@ -982,7 +984,7 @@ function icsStamp(iso){ return new Date(iso).toISOString().replace(/[-:]/g,'').s
 function vevent(e,i){
   return ['BEGIN:VEVENT','UID:'+Date.now()+'-'+i+'@wedding','DTSTAMP:'+icsStamp(new Date().toISOString()),
     'DTSTART:'+icsStamp(e.start),'DTEND:'+icsStamp(e.end),
-    'SUMMARY:'+e.name.en+' \u2014 Manroop & Sukhpreet','LOCATION:'+e.place.en,'END:VEVENT'].join('\r\n');
+    'SUMMARY:'+e.name.en+' \u2014 Manroop & Sukhpreet','LOCATION:'+(e.mapUrl ? e.place.en+' '+e.mapUrl : e.place.en),'END:VEVENT'].join('\r\n');
 }
 function saveIcs(list,filename){
   const body = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//wedding//invite//EN','CALSCALE:GREGORIAN']
